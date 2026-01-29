@@ -1,0 +1,13 @@
+data types
+
+Text Type: str (string) for sequences of characters. Strings are immutable.
+Numeric Types: int (integers), float (floating-point numbers), and complex (complex numbers).
+Sequence Types: list (mutable collections), tuple (immutable collections), and range (sequences of numbers).
+Mapping Type: dict (dictionaries) for key-value pairs.
+Set Types: set (mutable collections of unique items) and frozenset (immutable sets).
+Boolean Type: bool for logical True or False values.
+
+string
+Integers
+Floats
+Boolean
