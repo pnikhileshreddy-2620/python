@@ -1,0 +1,23 @@
+Control flow is just how Python decides what runs and when.
+
+a) if, elif, else
+
+b) Loops
+for loop
+
+Used when you know how many times to loop.
+while loop
+Runs as long as a condition is true.
+
+comparsion operators
+
+>
+<
+>=
+<=
+==
+!=
+
+% = modulo  10%5 =2 in real math
+in python 10%2 =0 
+
