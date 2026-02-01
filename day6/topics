@@ -1,0 +1,30 @@
+Code blocks in Python
+A code block is a group of statements that belong together
+indentation (spaces)
+if x > 0:
+    print("Positive number")
+    print("This line is also in the block")
+Key rules:
+A colon : starts a block
+All lines in the block must be indented the same amount
+Usually 4 spaces (standard practice)
+
+Blocks appear in:
+if / elif / else
+while, for
+functions
+classes
+
+Functions in Python
+A function is a reusable block of code that performs a specific task.
+Why use functions?
+Avoid repeating code
+Make programs easier to read
+Break big problems into smaller ones
+
+def greet():
+    print("Hello!")
+greet()
+
+while loop in Python
+A while loop repeats code as long as a condition is true.
