@@ -1,0 +1,43 @@
+Python List:
+
+A list in Python is a built-in data type used to store multiple items in a single variable. Lists are ordered, mutable (changeable), and allow duplicate values.
+
+Lists are created using square brackets [].
+
+Example:
+my_list = [1, 2, 3, "apple", 4.5]
+
+Commonly used list methods:
+
+1. append(item)
+Adds an item to the end of the list
+
+2. insert(index, item)
+Inserts an item at a specific position
+
+3. extend(iterable)
+Adds all elements of another list or iterable to the list
+
+4. remove(item)
+Removes the first occurrence of the specified item
+
+5. pop(index)
+Removes and returns the item at the given index (default is last)
+
+6. clear()
+Removes all elements from the list
+
+7. index(item)
+Returns the index of the first occurrence of the item
+
+8. count(item)
+Returns the number of times an item appears in the list
+
+9. sort()
+Sorts the list in ascending order
+
+10. reverse()
+Reverses the order of the list
+
+11. copy()
+Returns a shallow copy of the list

@@ -1,0 +1,35 @@
+What is a loop?
+A loop is a way to repeat a block of code multiple times without writing it again and again.
+
+Why do we use loops?
+We use loops when:
+You want to repeat something many times
+You’re working with lists, strings, numbers
+You don’t know in advance how many times something will run.
+
+Types of loops in Python
+Python mainly has two loops:
+🔹 for loop
+Used when you know how many times to repeat
+🔹 while loop
+Used when you don’t know how many times to repeat
+
+break and continue
+
+Where are loops used in real life code?
+
+Games (movement, score updates)
+
+Websites (user input validation)
+
+Data analysis (processing thousands of rows)
+
+Automation scripts
+
+AI / Machine Learning training.
+
+
+Simple rule to remember
+
+🟢 Use for → when you know how many times
+🟡 Use while → when you don’t know how many times
