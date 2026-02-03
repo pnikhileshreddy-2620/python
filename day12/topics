@@ -1,0 +1,37 @@
+local scope
+
+Variables created inside a function.
+def func():
+    x = 10
+    print(x)
+
+func()
+# print(x) ❌ Error: x is not defined outside
+
+Enclosing scope
+
+Variables in a function inside another function.
+def outer():
+    y = 20
+    def inner():
+        print(y)
+    inner()
+
+outer()
+
+Global scope
+
+Variables declared outside all functions.
+z = 30
+
+def show():
+    print(z)
+
+show()
+
+    | Scope     | Where defined     | Accessible     |
+| --------- | ----------------- | -------------- |
+| Local     | Inside function   | Only there     |
+| Enclosing | Outer function    | Inner function |
+| Global    | Outside functions | Everywhere     |
+| Built-in  | Python itself     | Everywhere     |
