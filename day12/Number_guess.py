@@ -33,7 +33,7 @@ def easy():
     local =10
     game_logic(local)
 def hard():
-    local = 10
+    local = 5
     game_logic(local)
 print("Welcome to Number Guessing game ")
 print("This game will generate the number 1 to 100")
