@@ -1,0 +1,45 @@
+Debugging in programming is the process of finding, understanding, and fixing errors (called “bugs”) in code 🐛💻.
+
+When you write a program, things don’t always work the way you expect. Debugging is how you figure out why.
+What counts as a bug?
+
+
+Syntax errors – typos or grammar mistakes (missing semicolons, wrong indentation, etc.)
+
+
+Runtime errors – the program crashes while running (like dividing by zero)
+
+
+Logic errors – the program runs, but gives the wrong result (the trickiest kind)
+
+
+What does debugging usually involve?
+
+
+Reading error messages carefully
+
+
+Running the code step by step to see what’s happening
+
+
+Printing values to check what variables contain
+
+
+Using a debugger tool to pause, inspect, and move through code line by line
+
+
+Testing different inputs to spot patterns
+
+
+Simple example
+x = 10
+y = 0
+print(x / y)
+
+This crashes. Debugging means realizing: “Oh, I’m dividing by zero,” and then fixing it.
+Why debugging matters
+
+
+1.describe the problem
+2. what is the error.
+3.program except input data ,what data type use is giving to program
