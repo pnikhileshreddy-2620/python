@@ -1,0 +1,121 @@
+How Python achieves OOP concepts
+1️⃣ Class & Object (base of OOP)
+
+Real life:
+Class = Blueprint
+Object = Real thing made from it
+
+class Car:
+    def start(self):
+        print("Car started")
+
+my_car = Car()   # object
+my_car.start()
+Python uses the class keyword to create classes
+👉 Objects are created by calling the class
+
+2️⃣ Encapsulation (data protection)
+Real life:
+ATM machine → you can withdraw money, but you can’t touch cash inside
+
+In Python:
+Real life:
+ATM machine → you can withdraw money, but you can’t touch cash inside
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance   # private variable
+
+    def get_balance(self):
+        return self.__balance
+__balance is private
+
+Access only through methods
+
+👉 Python achieves encapsulation using:
+
+Access modifiers (_, __)
+
+Getter & setter methods
+
+3️⃣ Inheritance (reusability)
+
+Real life:
+Child inherits features from parents
+
+class Vehicle:
+    def start(self):
+        print("Vehicle started")
+
+class Car(Vehicle):
+    pass
+
+c = Car()
+c.start()
+Car automatically gets start() from Vehicle
+4️⃣ Polymorphism (many forms)
+
+Real life:
+Same word “run”:
+
+run a program
+
+run a race
+
+In Python:
+class Dog:
+    def sound(self):
+        print("Bark")
+
+class Cat:
+    def sound(self):
+        print("Meow")
+
+animals = [Dog(), Cat()]
+
+for a in animals:
+    a.sound()
+5️⃣ Abstraction (hide complexity)
+
+Real life:
+Car pedals → you drive, you don’t know engine logic
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+
+------------------------------------------------------------
+Important Python OOP features
+
+self → refers to current object
+
+__init__() → constructor
+
+Dynamic typing
+
+Multiple inheritance
+
+
+
+example of oops
+
+cars
+hotel
+drones
+
+
+object :-what is has,what it does
+example waiter
+what is has plates
+what it does given food
+
+object having attributes, methods
+
+attributes is variable
+methods is behaviours
+
+creating object
+
+obj =classname()
