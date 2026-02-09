@@ -1,0 +1,41 @@
+Higher-order functions (often what people mean by “high order”)
+
+A higher-order function is a function that does at least one of these:
+
+Takes another function as an argument
+
+Returns a function
+
+def greet(name):
+    return f"Hello {name}"
+
+def shout(func):
+    # func is another function
+    return func("Alice").upper()
+
+print(shout(greet))
+
+ex:
+numbers = [1, 2, 3, 4]
+
+squared = list(map(lambda x: x * x, numbers))
+filtered = list(filter(lambda x: x % 2 == 0, numbers))
+
+map, filter, and sorted are all higher-order functions because they accept functions.
+
+Returning a function
+def multiplier(n):
+    def inner(x):
+        return x * n
+    return inner
+
+double = multiplier(2)
+print(double(5))  # 10
+
+
+| Concept               | What it is                                                               |
+| --------------------- | ------------------------------------------------------------------------ |
+| Higher-order function | A function that works with other functions                               |
+| Event listener        | A function that reacts to an event                                       |
+| Callback              | A function passed to be called later                                     |
+| Relationship          | Event listeners are usually callbacks passed into higher-order functions |
