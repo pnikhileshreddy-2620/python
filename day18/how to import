@@ -1,0 +1,29 @@
+How to import the module.
+
+import  turtle :- basic this for fews use best
+in case i need to use
+
+t = turtle.Turtle() to create a object
+
+
+from tuttle import Turtle if use more time in the code , we can use this import good
+
+keyword:ModuleName:keyword:ThingInModule :- if use this line no need to use
+
+t = turtle.Turtle()
+
+direct i can use.
+t =Turtle()
+
+in case simple to create the object
+
+
+from turtle import * all thing inside the module
+
+
+
+ailas as
+
+from turtle import Turtle as tt
+
+ff =tt.Turtle()
