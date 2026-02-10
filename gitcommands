@@ -1,0 +1,179 @@
+# PURPOSE:
+# Push code from sub-branch to main branch safely
+
+# STEP 1: Check current branch and status
+git status
+# Use: Shows which branch you are on and if files are modified
+
+# STEP 2: Save your latest code (commit) in sub-branch
+git add .
+# Use: Stages all changed files
+
+git commit -m "Your commit message"
+# Use: Saves changes to the sub-branch
+
+# STEP 3: Switch to main branch
+git checkout main
+# Use: Moves from sub-branch to main branch
+
+# STEP 4: Update main branch from GitHub
+git pull origin main
+# Use: Gets latest code from remote main to avoid conflicts
+
+# STEP 5: Merge sub-branch into main
+git merge sub-branch-name
+# Use: Brings code from sub-branch into main branch
+
+# STEP 6: Push updated main branch to GitHub
+git push origin main
+# Use: Uploads merged code to remote main branch
+
+
+
+======================================================================================
+========================================
+GIT STANDARD RULES – COMMANDS & USE CASES
+========================================
+
+----------------------------------------
+RULE 1: Never work directly on main
+----------------------------------------
+USE CASE:
+Main branch must always contain stable, working code.
+
+COMMANDS USED:
+git checkout -b feature-branch
+
+WHAT IT DOES:
+Creates a new branch so work does not affect main.
+
+
+----------------------------------------
+RULE 2: Always create branch from latest main
+----------------------------------------
+USE CASE:
+Avoid conflicts and missing updates from main branch.
+
+COMMANDS USED:
+git checkout main
+git pull origin main
+git checkout -b feature-branch
+
+WHAT IT DOES:
+Updates main first, then creates a fresh branch from it.
+
+
+----------------------------------------
+RULE 3: Commit changes in sub-branch only
+----------------------------------------
+USE CASE:
+Save progress safely without touching main.
+
+COMMANDS USED:
+git add .
+git commit -m "Meaningful message"
+
+WHAT IT DOES:
+Stages and saves changes to the current sub-branch.
+
+
+----------------------------------------
+RULE 4: Main does NOT auto-update
+----------------------------------------
+USE CASE:
+Changes in sub-branch should not reach main automatically.
+
+COMMANDS USED:
+git merge feature-branch
+
+WHAT IT DOES:
+Manually brings sub-branch code into main.
+
+
+----------------------------------------
+RULE 5: Always update main before merging
+----------------------------------------
+USE CASE:
+Prevent merge conflicts when main has new changes.
+
+COMMANDS USED:
+git checkout main
+git pull origin main
+
+WHAT IT DOES:
+Syncs local main with GitHub main.
+
+
+----------------------------------------
+RULE 6: Merge only clean & tested code
+----------------------------------------
+USE CASE:
+Keep main stable and production-ready.
+
+COMMANDS USED:
+git checkout main
+git merge feature-branch
+
+WHAT IT DOES:
+Adds completed feature code into main.
+
+
+----------------------------------------
+RULE 7: Push only from the branch you are on
+----------------------------------------
+USE CASE:
+Git pushes the CURRENT branch only.
+
+COMMANDS USED:
+git push origin main
+
+WHAT IT DOES:
+Uploads main branch code to GitHub.
+
+
+----------------------------------------
+RULE 8: Delete branch after merge
+----------------------------------------
+USE CASE:
+Keep repository clean and readable.
+
+COMMANDS USED:
+git branch -d feature-branch
+git push origin --delete feature-branch
+
+WHAT IT DOES:
+Removes unused branches locally and remotely.
+
+
+----------------------------------------
+STANDARD WORKFLOW (USE CASE)
+----------------------------------------
+
+1. Update main
+   git checkout main
+   git pull origin main
+
+2. Create branch
+   git checkout -b feature-login
+
+3. Work & commit
+   git add .
+   git commit -m "Add login feature"
+
+4. Merge to main
+   git checkout main
+   git merge feature-login
+
+5. Push main
+   git push origin main
+
+6. Delete branch
+   git branch -d feature-login
+
+
+----------------------------------------
+GOLDEN RULE
+----------------------------------------
+Main branch = stable code
+Sub-branch = working code
+Only merge → then push main
