@@ -1,0 +1,28 @@
+Inheritance in programming is a fundamental concept in object-oriented programming (OOP) where a new class (called a child or subclass) can inherit attributes and methods from an existing class (called a parent or superclass).
+ This promotes code reuse and establishes a hierarchical relationship between classes.
+
+
+ # Parent class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "Some sound"
+
+# Child class inheriting from Animal
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return "Meow!"
+
+# Usage
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+print(dog.name)      # Output: Buddy (inherited from Animal)
+print(dog.speak())   # Output: Woof! (overridden method)
+print(cat.speak())   # Output: Meow!
