@@ -54,4 +54,7 @@ class Snake:
          if self.head.heading() != LEFT:
             self.head.setheading(0)
 
+     def game_over(self):
+         self.game_over(0,0)
+
 

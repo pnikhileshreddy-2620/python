@@ -19,7 +19,6 @@ class GameScore(Turtle):
         self.write(f" LEVEL {self.score} ", align="center",font=('Arial',16,"bold"))
 
     def increase_score(self):
-        self.score+=1
         self.update_score()
     def game_over(self):
         self.goto(0,0)
