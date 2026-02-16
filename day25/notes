@@ -1,0 +1,199 @@
+Pandas is one of the most popular Python libraries for data manipulation and analysis. It provides powerful, flexible, and easy-to-use data structures like `Series` and `DataFrame`, which help in handling structured data effectively. Here's a basic to intermediate level breakdown:
+
+### Key Components:
+
+1. **`Series`**:
+
+   * A one-dimensional labeled array (like a column in a spreadsheet or a list).
+   * It's similar to a list, but with index labels for each element.
+
+   ```python
+   import pandas as pd
+   s = pd.Series([1, 2, 3, 4], index=['a', 'b', 'c', 'd'])
+   print(s)
+   ```
+
+2. **`DataFrame`**:
+
+   * A two-dimensional table (like a spreadsheet or SQL table) with rows and columns.
+   * It’s essentially a collection of Series that share the same index.
+
+   ```python
+   data = {'Name': ['Tom', 'Jerry', 'Mickey'],
+           'Age': [20, 22, 21],
+           'City': ['NY', 'LA', 'Chicago']}
+   df = pd.DataFrame(data)
+   print(df)
+   ```
+
+### Regularly Used Methods in Pandas:
+
+#### 1. **DataFrame Creation and Inspection**
+
+* `pd.read_csv()`: Read data from CSV files into a DataFrame.
+* `df.head()`: Show the first 5 rows of the DataFrame (good for a quick look).
+* `df.tail()`: Show the last 5 rows.
+* `df.info()`: Show summary info about the DataFrame, including column types and non-null counts.
+* `df.shape`: Return a tuple representing the dimensions (rows, columns).
+* `df.describe()`: Get summary statistics for numeric columns.
+
+Example:
+
+```python
+df = pd.read_csv('data.csv')
+print(df.head())
+print(df.info())
+print(df.describe())
+```
+
+#### 2. **Selection and Indexing**
+
+* `df['column_name']`: Select a specific column by name.
+* `df.iloc[]`: Select rows and columns by position (integer-based indexing).
+* `df.loc[]`: Select rows and columns by label (index-based indexing).
+
+Example:
+
+```python
+print(df['Name'])  # Single column
+print(df.iloc[0])  # First row by index
+print(df.loc[0, 'Age'])  # First row, 'Age' column
+```
+
+#### 3. **Data Filtering and Slicing**
+
+* `df[df['column_name'] > value]`: Filter rows based on condition.
+* `df.query('column_name > value')`: Another way to filter with query syntax.
+* `df[df['column_name'].isin([value1, value2])]`: Filter rows where column values match a list.
+
+Example:
+
+```python
+filtered_df = df[df['Age'] > 21]  # Filter ages > 21
+```
+
+#### 4. **Sorting**
+
+* `df.sort_values(by='column_name')`: Sort data by a column.
+* `df.sort_values(by=['col1', 'col2'])`: Sort by multiple columns.
+
+Example:
+
+```python
+sorted_df = df.sort_values(by='Age', ascending=False)
+```
+
+#### 5. **Handling Missing Data**
+
+* `df.isna()`: Check for missing values (returns a boolean DataFrame).
+* `df.dropna()`: Drop rows with missing values.
+* `df.fillna(value)`: Fill missing values with a specific value.
+
+Example:
+
+```python
+df.isna()  # Check for missing values
+df.dropna()  # Drop rows with any missing values
+df.fillna(0)  # Replace missing values with 0
+```
+
+#### 6. **Aggregation and Grouping**
+
+* `df.groupby('column_name')`: Group data by a column for aggregation.
+* `.agg()` or `.mean()`, `.sum()`, `.min()`, `.max()` for aggregation.
+
+Example:
+
+```python
+group_df = df.groupby('City').mean()  # Calculate mean age per city
+```
+
+#### 7. **Merging and Joining**
+
+* `pd.merge()`: Merge two DataFrames based on a common column.
+* `df.merge(df2, on='column_name')`: Merge `df` and `df2` on a column.
+
+Example:
+
+```python
+merged_df = pd.merge(df1, df2, on='ID')
+```
+
+#### 8. **Renaming Columns and Index**
+
+* `df.rename(columns={'old_name': 'new_name'})`: Rename columns.
+* `df.set_index('column_name')`: Set a column as the index.
+
+Example:
+
+```python
+df = df.rename(columns={'Name': 'Full Name'})
+df = df.set_index('Full Name')
+```
+
+#### 9. **Applying Functions**
+
+* `df.apply()`: Apply a function along an axis of the DataFrame (rows or columns).
+* `df['column'].apply(lambda x: ...)`: Apply a function to a single column.
+
+Example:
+
+```python
+df['Age'] = df['Age'].apply(lambda x: x + 1)  # Increment age by 1
+```
+
+#### 10. **Pivot Tables**
+
+* `df.pivot_table()`: Create pivot tables for summarizing data.
+
+Example:
+
+```python
+pivot_df = df.pivot_table(values='Age', index='City', aggfunc='mean')
+```
+
+#### 11. **Concatenation and Appending**
+
+* `pd.concat()`: Concatenate DataFrames along rows or columns.
+* `df.append()`: Append rows to an existing DataFrame.
+
+Example:
+
+```python
+df_combined = pd.concat([df1, df2])
+```
+
+### Intermediate Level Usage:
+
+* **Datetime Manipulation**:
+  Use `pd.to_datetime()` to convert strings to datetime objects.
+
+  ```python
+  df['Date'] = pd.to_datetime(df['Date'])
+  ```
+
+* **String Operations**:
+  Pandas provides methods like `.str.contains()`, `.str.replace()`, `.str.split()` to manipulate text data.
+
+  ```python
+  df['Name'] = df['Name'].str.upper()  # Convert names to uppercase
+  ```
+
+* **Window Functions**:
+
+  * `df.rolling(window=3).mean()`: Apply a rolling window calculation.
+
+  Example:
+
+  ```python
+  df['Moving_Avg'] = df['Age'].rolling(window=3).mean()
+  ```
+
+### Performance Tips:
+
+* **Vectorized Operations**: Pandas allows vectorized operations (operations on entire columns/rows at once) for better performance.
+* **Use `categorical` type for repeated string data**: Helps in reducing memory usage and improving performance.
+
+### Summary:
+
+Pandas is a versatile and powerful tool for handling and analyzing data in Python. By mastering the regular methods mentioned above, you'll be well-equipped to manipulate, clean, analyze, and visualize structured data efficiently.
