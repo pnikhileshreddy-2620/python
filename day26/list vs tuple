@@ -1,0 +1,134 @@
+## 🔹 Tuple vs List in Python
+
+Both **tuples** and **lists** store multiple items in Python, but they have important differences.
+
+---
+
+# 1️⃣ List
+
+A **list** is an ordered, **mutable** (changeable) collection.
+
+### ✅ Syntax
+
+```python
+my_list = [1, 2, 3]
+```
+
+### ✅ You can modify it
+
+```python
+my_list[0] = 10
+my_list.append(4)
+print(my_list)   # [10, 2, 3, 4]
+```
+
+---
+
+# 2️⃣ Tuple
+
+A **tuple** is an ordered, **immutable** (unchangeable) collection.
+
+### ✅ Syntax
+
+```python
+my_tuple = (1, 2, 3)
+```
+
+### ❌ You cannot modify it
+
+```python
+my_tuple[0] = 10   # ❌ Error
+```
+
+---
+
+# 🔥 Key Differences
+
+| Feature     | List             | Tuple            |
+| ----------- | ---------------- | ---------------- |
+| Syntax      | `[ ]`            | `( )`            |
+| Mutable     | ✅ Yes            | ❌ No             |
+| Performance | Slightly slower  | Slightly faster  |
+| Memory      | Uses more memory | Uses less memory |
+| Methods     | Many             | Few              |
+
+---
+
+# 🔹 List Methods (Common)
+
+```python
+append()
+extend()
+insert()
+remove()
+pop()
+sort()
+reverse()
+clear()
+```
+
+---
+
+# 🔹 Tuple Methods (Only 2!)
+
+```python
+count()
+index()
+```
+
+Example:
+
+```python
+t = (1, 2, 2, 3)
+print(t.count(2))   # 2
+print(t.index(3))   # 3
+```
+
+---
+
+# 🚀 When to Use What?
+
+### ✅ Use List when:
+
+* Data needs to change
+* You need many built-in methods
+* You are storing dynamic data
+
+Example:
+
+```python
+shopping_cart = ["milk", "bread"]
+shopping_cart.append("eggs")
+```
+
+---
+
+### ✅ Use Tuple when:
+
+* Data should NOT change
+* Fixed data (like coordinates)
+* You want better performance
+
+Example:
+
+```python
+coordinates = (10.5, 20.3)
+```
+
+---
+
+# 🎯 Simple Rule to Remember
+
+👉 **List = Changeable**
+👉 **Tuple = Fixed**
+
+---
+
+If you want, I can also explain:
+
+* List vs Tuple vs Set
+* Why tuple is faster
+* Real interview questions
+* Practice examples
+
+Just tell me 😊
