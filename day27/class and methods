@@ -1,0 +1,312 @@
+## 🐍 Classes and Methods in the `tkinter` Module
+
+`tkinter` is an object-oriented GUI library. Almost everything (windows, buttons, labels, etc.) is a **class**, and you interact with them using **methods**.
+
+Below is a structured overview.
+
+---
+
+# 1️⃣ Main Application Class
+
+## `Tk`
+
+Creates the main application window.
+
+```python
+import tkinter as tk
+
+root = tk.Tk()
+root.title("My App")
+root.geometry("400x300")
+root.mainloop()
+```
+
+### Important Methods of `Tk`
+
+| Method                     | Purpose                 |
+| -------------------------- | ----------------------- |
+| `title(string)`            | Set window title        |
+| `geometry("WxH")`          | Set window size         |
+| `resizable(width, height)` | Allow resizing          |
+| `configure()`              | Change background, etc. |
+| `mainloop()`               | Start event loop        |
+| `destroy()`                | Close window            |
+| `withdraw()`               | Hide window             |
+| `iconify()`                | Minimize window         |
+
+---
+
+# 2️⃣ Toplevel Window
+
+## `Toplevel`
+
+Creates additional windows.
+
+```python
+new_window = tk.Toplevel(root)
+```
+
+---
+
+# 3️⃣ Base Widget Class
+
+All widgets inherit from the base class:
+
+## `Widget`
+
+Common methods available to all widgets:
+
+| Method                     | Purpose                  |
+| -------------------------- | ------------------------ |
+| `pack()`                   | Pack layout              |
+| `grid()`                   | Grid layout              |
+| `place()`                  | Exact positioning        |
+| `config()` / `configure()` | Change properties        |
+| `cget()`                   | Get property value       |
+| `bind(event, function)`    | Bind event               |
+| `destroy()`                | Remove widget            |
+| `after(ms, func)`          | Run function after delay |
+
+Example:
+
+```python
+button.config(text="New Text")
+```
+
+---
+
+# 4️⃣ Common Widget Classes
+
+### 🔹 `Label`
+
+Displays text or images.
+
+```python
+label = tk.Label(root, text="Hello")
+label.pack()
+```
+
+Common methods:
+
+* `config(text="new text")`
+* `cget("text")`
+
+---
+
+### 🔹 `Button`
+
+Clickable button.
+
+```python
+btn = tk.Button(root, text="Click", command=my_func)
+btn.pack()
+```
+
+---
+
+### 🔹 `Entry`
+
+Single-line input box.
+
+```python
+entry = tk.Entry(root)
+entry.pack()
+
+value = entry.get()
+entry.insert(0, "Hello")
+entry.delete(0, tk.END)
+```
+
+Important methods:
+
+* `get()`
+* `insert(index, text)`
+* `delete(start, end)`
+
+---
+
+### 🔹 `Text`
+
+Multi-line text box.
+
+```python
+text = tk.Text(root)
+text.pack()
+
+text.insert("1.0", "Hello")
+content = text.get("1.0", tk.END)
+```
+
+---
+
+### 🔹 `Frame`
+
+Container widget.
+
+```python
+frame = tk.Frame(root)
+frame.pack()
+```
+
+---
+
+### 🔹 `Canvas`
+
+Drawing area.
+
+```python
+canvas = tk.Canvas(root, width=200, height=200)
+canvas.pack()
+
+canvas.create_line(0, 0, 200, 200)
+canvas.create_rectangle(50, 50, 150, 150)
+```
+
+---
+
+### 🔹 `Checkbutton`
+
+```python
+var = tk.IntVar()
+chk = tk.Checkbutton(root, text="Accept", variable=var)
+chk.pack()
+```
+
+---
+
+### 🔹 `Radiobutton`
+
+```python
+choice = tk.StringVar()
+
+tk.Radiobutton(root, text="Option 1", variable=choice, value="1").pack()
+tk.Radiobutton(root, text="Option 2", variable=choice, value="2").pack()
+```
+
+---
+
+# 5️⃣ Variable Classes
+
+These are special Tkinter classes for dynamic values:
+
+| Class          | Used For       |
+| -------------- | -------------- |
+| `StringVar()`  | String values  |
+| `IntVar()`     | Integer values |
+| `DoubleVar()`  | Float values   |
+| `BooleanVar()` | Boolean values |
+
+Example:
+
+```python
+name = tk.StringVar()
+entry = tk.Entry(root, textvariable=name)
+```
+
+---
+
+# 6️⃣ Event Handling Methods
+
+Bind events to widgets:
+
+```python
+def clicked(event):
+    print("Mouse clicked")
+
+button.bind("<Button-1>", clicked)
+```
+
+Common events:
+
+* `<Button-1>` → Left click
+* `<Key>` → Key press
+* `<Enter>` → Mouse enters
+* `<Leave>` → Mouse leaves
+
+---
+
+# 7️⃣ Messagebox (Submodule)
+
+```python
+from tkinter import messagebox
+
+messagebox.showinfo("Title", "Message")
+messagebox.showwarning("Warning", "Be careful!")
+messagebox.showerror("Error", "Something went wrong")
+```
+
+---
+
+# 8️⃣ ttk (Themed Widgets)
+
+```python
+from tkinter import ttk
+
+ttk.Button(root, text="Styled Button").pack()
+```
+
+Provides:
+
+* `ttk.Button`
+* `ttk.Label`
+* `ttk.Entry`
+* `ttk.Combobox`
+* `ttk.Treeview`
+* etc.
+
+---
+
+# 🔥 How It Is Used (Overall Flow)
+
+1. Create main window → `root = Tk()`
+2. Create widgets → `Label`, `Button`, etc.
+3. Place widgets → `pack()`, `grid()`
+4. Add functionality → `command=`, `bind()`
+5. Start event loop → `mainloop()`
+
+---
+
+# 🧠 Concept Summary
+
+* Tkinter is **class-based**
+* Every GUI element = **object**
+* You control it using **methods**
+* Layout and events are essential
+
+---
+
+If you want, I can next explain:
+
+* Complete **class hierarchy diagram**
+* How Tkinter internally works (event loop concept)
+* How to build a full app using OOP style
+* Difference between `tkinter` and `ttk`
+
+Tell me your level (beginner/intermediate/advanced), and I’ll tailor it 😊
+
+
+
+Misc
+ ├── Pack
+ ├── Place
+ ├── Grid
+ └── Widget
+       ├── Tk
+       ├── Toplevel
+       ├── Frame
+       │     └── LabelFrame
+       │
+       ├── Button
+       ├── Label
+       ├── Entry
+       ├── Text
+       ├── Message
+       ├── Canvas
+       ├── Listbox
+       ├── Menu
+       ├── Menubutton
+       ├── Scrollbar
+       ├── Scale
+       ├── Spinbox
+       ├── Checkbutton
+       └── Radiobutton
