@@ -1,0 +1,134 @@
+## 🐍 Tkinter in Python
+
+**Tkinter** is Python’s standard GUI (Graphical User Interface) library. It allows you to create desktop applications with windows, buttons, text boxes, labels, and more.
+
+It comes **built into Python**, so no extra installation is needed.
+
+---
+
+## ✅ Basic Example (Hello World Window)
+
+```python
+import tkinter as tk
+
+# Create main window
+root = tk.Tk()
+root.title("My First Tkinter App")
+root.geometry("300x200")
+
+# Add a label
+label = tk.Label(root, text="Hello, Tkinter!")
+label.pack()
+
+# Run the application
+root.mainloop()
+```
+
+### What this does:
+
+* `tk.Tk()` → Creates the main window
+* `Label()` → Creates text
+* `pack()` → Places the widget in the window
+* `mainloop()` → Keeps the window open
+
+---
+
+## 🧱 Common Tkinter Widgets
+
+| Widget        | Purpose                     |
+| ------------- | --------------------------- |
+| `Label`       | Display text                |
+| `Button`      | Clickable button            |
+| `Entry`       | Single-line text input      |
+| `Text`        | Multi-line text box         |
+| `Frame`       | Container for other widgets |
+| `Checkbutton` | Checkbox                    |
+| `Radiobutton` | Radio selection             |
+| `Canvas`      | Drawing area                |
+
+---
+
+## 🔘 Button Example
+
+```python
+import tkinter as tk
+
+def say_hello():
+    print("Hello!")
+
+root = tk.Tk()
+
+button = tk.Button(root, text="Click Me", command=say_hello)
+button.pack()
+
+root.mainloop()
+```
+
+When clicked, it runs the `say_hello` function.
+
+---
+
+## 📐 Layout Managers
+
+Tkinter has 3 layout systems:
+
+1. **pack()** – Simple stacking
+2. **grid()** – Row & column layout
+3. **place()** – Exact positioning (x, y coordinates)
+
+Example using `grid()`:
+
+```python
+import tkinter as tk
+
+root = tk.Tk()
+
+tk.Label(root, text="Name:").grid(row=0, column=0)
+tk.Entry(root).grid(row=0, column=1)
+
+root.mainloop()
+```
+
+---
+
+## 🎨 Simple Calculator Example
+
+```python
+import tkinter as tk
+
+def add():
+    result.set(int(e1.get()) + int(e2.get()))
+
+root = tk.Tk()
+
+e1 = tk.Entry(root)
+e1.pack()
+
+e2 = tk.Entry(root)
+e2.pack()
+
+result = tk.IntVar()
+
+tk.Button(root, text="Add", command=add).pack()
+tk.Label(root, textvariable=result).pack()
+
+root.mainloop()
+```
+
+---
+
+## 🚀 Why Use Tkinter?
+
+✔ Built into Python
+✔ Easy to learn
+✔ Good for small desktop apps
+✔ Cross-platform (Windows, Mac, Linux)
+
+---
+
+If you'd like, I can show you:
+
+* A **complete mini project**
+* How to build a **login form**
+* How to style Tkinter apps (ttk)
+* Or compare Tkinter with other GUI libraries**

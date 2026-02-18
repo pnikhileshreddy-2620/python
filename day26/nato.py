@@ -10,7 +10,7 @@ nato_phonetic = {
     "I": "India",
     "J": "Juliett",
     "K": "Kilo",
-    "L": "Lima",
+    "L": "London",
     "M": "Mike",
     "N": "November",
     "O": "Oscar",
