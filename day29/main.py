@@ -15,7 +15,7 @@ def password_file(website,email,password):
         show_pop()
     else:
         try:
-            with open('password.txt','a') as f:
+            with open('password.txt', 'a') as f:
                 f.write(f'{website} |{email} |{password} \n')
                 website_input.delete(0,END)
                 password_display.delete(0,END)

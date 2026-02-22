@@ -1,0 +1,15 @@
+
+Important in Exception
+try         :Something that might cause exception
+except      :Do these if there was an exception
+else        :Do this if there is no exception
+finally     :Do this no matter what happens
+
+raise: own Exception
+
+
+working with json
+
+json.dump() for write
+json.load() to read
+json.update() for update

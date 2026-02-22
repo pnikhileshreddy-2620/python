@@ -1,0 +1,240 @@
+In Python, **Errors** and **Exceptions** are important concepts. Since you’re learning Python seriously to become a developer, understanding this clearly is very important.
+
+---
+
+# 1️⃣ What is an Error in Python?
+
+An **error** is a problem in your program that stops execution.
+
+There are mainly **2 types**:
+
+## 🔹 1. Syntax Errors
+
+Happen when Python rules are broken.
+
+```python
+if x > 5
+    print("Hello")
+```
+
+❌ Missing `:` → SyntaxError
+
+These are detected **before** program execution.
+
+---
+
+## 🔹 2. Exceptions (Runtime Errors)
+
+These happen **while the program is running**.
+
+Example:
+
+```python
+a = 10
+b = 0
+print(a / b)
+```
+
+❌ Output:
+
+```
+ZeroDivisionError: division by zero
+```
+
+Program crashes if not handled.
+
+---
+
+# 2️⃣ Common Built-in Exceptions
+
+| Exception           | When it Happens           |
+| ------------------- | ------------------------- |
+| `ZeroDivisionError` | Dividing by zero          |
+| `ValueError`        | Wrong value type          |
+| `TypeError`         | Wrong data type operation |
+| `IndexError`        | Index out of range        |
+| `KeyError`          | Dictionary key not found  |
+| `FileNotFoundError` | File not found            |
+
+Example:
+
+```python
+num = int("abc")
+```
+
+❌ ValueError
+
+---
+
+# 3️⃣ Exception Handling in Python
+
+Python uses:
+
+```
+try
+except
+else
+finally
+```
+
+---
+
+## ✅ Basic Syntax
+
+```python
+try:
+    # risky code
+except ExceptionType:
+    # handling code
+```
+
+---
+
+## 🔹 Example 1: Handling ZeroDivisionError
+
+```python
+try:
+    a = 10
+    b = 0
+    print(a / b)
+except ZeroDivisionError:
+    print("You cannot divide by zero")
+```
+
+✔ Program will not crash.
+
+---
+
+## 🔹 Example 2: Handling Multiple Exceptions
+
+```python
+try:
+    num = int(input("Enter number: "))
+    result = 10 / num
+    print(result)
+
+except ZeroDivisionError:
+    print("Number cannot be zero")
+
+except ValueError:
+    print("Invalid input. Enter only numbers.")
+```
+
+---
+
+## 🔹 Example 3: Using Generic Exception
+
+```python
+try:
+    x = int("abc")
+except Exception as e:
+    print("Error occurred:", e)
+```
+
+`e` stores the error message.
+
+---
+
+# 4️⃣ else Block
+
+Runs only if no exception occurs.
+
+```python
+try:
+    a = 10
+    b = 2
+    print(a / b)
+except ZeroDivisionError:
+    print("Cannot divide")
+else:
+    print("Division successful")
+```
+
+---
+
+# 5️⃣ finally Block
+
+Runs **always**, whether exception occurs or not.
+
+```python
+try:
+    f = open("file.txt")
+except FileNotFoundError:
+    print("File not found")
+finally:
+    print("Done")
+```
+
+Used mostly for:
+
+* Closing files
+* Closing database connections
+* Cleaning resources
+
+---
+
+# 6️⃣ Raising Custom Exceptions
+
+You can create your own exception.
+
+```python
+age = 15
+
+if age < 18:
+    raise ValueError("Age must be 18 or above")
+```
+
+---
+
+# 7️⃣ Creating Custom Exception Class
+
+```python
+class MyError(Exception):
+    pass
+
+raise MyError("Something went wrong")
+```
+
+---
+
+# 8️⃣ Best Practices (Very Important)
+
+✅ Catch specific exceptions
+✅ Don’t use bare `except:`
+✅ Use finally for cleanup
+✅ Keep try block small
+✅ Log errors in real applications
+
+---
+
+# 🔥 Real Developer Example (File Handling)
+
+```python
+try:
+    with open("data.txt", "r") as file:
+        content = file.read()
+        print(content)
+
+except FileNotFoundError:
+    print("File does not exist")
+
+except PermissionError:
+    print("No permission to read file")
+
+except Exception as e:
+    print("Unexpected error:", e)
+```
+
+---
+
+# 🎯 Interview Important Points
+
+* Syntax errors vs Exceptions
+* try-except flow
+* finally purpose
+* Custom exceptions
+* Difference between `Exception` and specific exceptions
+
+---
+
+
