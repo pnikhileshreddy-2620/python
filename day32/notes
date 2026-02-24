@@ -1,0 +1,155 @@
+In Python, the **`email`** and **`datetime`** modules are part of the standard library and are commonly used for handling emails and working with dates/times.
+
+---
+
+## 📧 `email` Module
+
+The `email` module helps you **create, parse, and manage email messages**.
+
+### 1️⃣ Creating a Simple Email
+
+```python
+from email.message import EmailMessage
+
+msg = EmailMessage()
+msg['Subject'] = 'Test Email'
+msg['From'] = 'sender@example.com'
+msg['To'] = 'receiver@example.com'
+msg.set_content('This is a test email.')
+
+print(msg)
+```
+
+---
+
+### 2️⃣ Sending an Email (Using `smtplib`)
+
+```python
+import smtplib
+from email.message import EmailMessage
+
+msg = EmailMessage()
+msg['Subject'] = 'Hello'
+msg['From'] = 'sender@example.com'
+msg['To'] = 'receiver@example.com'
+msg.set_content('Hello from Python!')
+
+with smtplib.SMTP('smtp.example.com', 587) as server:
+    server.starttls()
+    server.login('username', 'password')
+    server.send_message(msg)
+```
+
+---
+
+### 3️⃣ Parsing an Email String
+
+```python
+from email import message_from_string
+
+raw_email = """Subject: Test
+From: a@example.com
+To: b@example.com
+
+Email body here.
+"""
+
+msg = message_from_string(raw_email)
+print(msg['Subject'])
+print(msg.get_payload())
+```
+
+---
+
+## 📅 `datetime` Module
+
+The `datetime` module is used to **work with dates and times**.
+
+---
+
+### 1️⃣ Get Current Date and Time
+
+```python
+from datetime import datetime
+
+now = datetime.now()
+print(now)
+```
+
+---
+
+### 2️⃣ Create a Specific Date
+
+```python
+from datetime import datetime
+
+dt = datetime(2025, 2, 24, 10, 30, 0)
+print(dt)
+```
+
+---
+
+### 3️⃣ Format Date as String
+
+```python
+from datetime import datetime
+
+now = datetime.now()
+formatted = now.strftime("%Y-%m-%d %H:%M:%S")
+print(formatted)
+```
+
+---
+
+### 4️⃣ Convert String to Date
+
+```python
+from datetime import datetime
+
+date_string = "2025-02-24 15:30:00"
+dt = datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
+print(dt)
+```
+
+---
+
+### 5️⃣ Date Arithmetic
+
+```python
+from datetime import datetime, timedelta
+
+today = datetime.now()
+future = today + timedelta(days=5)
+print(future)
+```
+
+---
+
+## 🔹 Quick Summary
+
+| Module     | Purpose                                        |
+| ---------- | ---------------------------------------------- |
+| `email`    | Create, send, parse email messages             |
+| `datetime` | Work with dates, times, formatting, arithmetic |
+
+---
+
+If you'd like, I can also show:
+
+* ✅ Sending email with attachment
+* ✅ Using timezone-aware datetime
+* ✅ Real-world example combining both modules
+* ✅ Interview-focused explanation
+
+Just tell me what you need 🙂
+pzvs vrjb gfmk lirw
+
+
+| Class       | Purpose               |
+| ----------- | --------------------- |
+| `date`      | Date only             |
+| `time`      | Time only             |
+| `datetime`  | Date + Time           |
+| `timedelta` | Time difference       |
+| `tzinfo`    | Base timezone class   |
+| `timezone`  | Fixed offset timezone |

@@ -1,0 +1,165 @@
+Here are the **main methods inside each class of Python’s `datetime` module** (Python 3.x).
+
+I’ll list the most important and commonly used ones clearly.
+
+---
+
+# 1️⃣ `date` Class Methods
+
+```python
+from datetime import date
+```
+
+## ✅ Class Methods
+
+* `date.today()`
+* `date.fromtimestamp(timestamp)`
+* `date.fromordinal(ordinal)`
+* `date.fromisoformat(date_string)`
+
+## ✅ Instance Methods
+
+* `replace(year, month, day)`
+* `timetuple()`
+* `toordinal()`
+* `weekday()` → Monday=0
+* `isoweekday()` → Monday=1
+* `isocalendar()`
+* `isoformat()`
+* `strftime(format)`
+
+---
+
+# 2️⃣ `time` Class Methods
+
+```python
+from datetime import time
+```
+
+## ✅ Class Methods
+
+* `time.fromisoformat(time_string)`
+
+## ✅ Instance Methods
+
+* `replace(hour, minute, second, microsecond)`
+* `isoformat()`
+* `strftime(format)`
+* `utcoffset()`
+* `dst()`
+* `tzname()`
+
+---
+
+# 3️⃣ `datetime` Class Methods
+
+```python
+from datetime import datetime
+```
+
+## ✅ Class Methods
+
+* `datetime.now(tz=None)`
+* `datetime.today()`
+* `datetime.utcnow()`
+* `datetime.fromtimestamp(timestamp, tz=None)`
+* `datetime.utcfromtimestamp(timestamp)`
+* `datetime.fromordinal(ordinal)`
+* `datetime.fromisoformat(date_string)`
+* `datetime.strptime(date_string, format)`
+* `datetime.combine(date, time)`
+
+## ✅ Instance Methods
+
+* `date()` → returns date object
+* `time()` → returns time object
+* `timetz()`
+* `replace()`
+* `astimezone(tz)`
+* `timetuple()`
+* `utctimetuple()`
+* `toordinal()`
+* `weekday()`
+* `isoweekday()`
+* `isocalendar()`
+* `isoformat()`
+* `strftime(format)`
+* `timestamp()`
+
+---
+
+# 4️⃣ `timedelta` Methods
+
+```python
+from datetime import timedelta
+```
+
+`timedelta` mainly supports arithmetic.
+
+## ✅ Instance Methods
+
+* `total_seconds()`
+
+It also supports:
+
+* Addition (+)
+* Subtraction (-)
+* Multiplication (*)
+* Division (/)
+
+---
+
+# 5️⃣ `timezone` Methods
+
+```python
+from datetime import timezone
+```
+
+## ✅ Instance Methods
+
+* `utcoffset()`
+* `tzname()`
+* `dst()`
+* `fromutc()`
+
+---
+
+# 6️⃣ `tzinfo` (Abstract Base Class)
+
+Used for creating custom timezone classes.
+
+Methods to override:
+
+* `utcoffset()`
+* `dst()`
+* `tzname()`
+* `fromutc()`
+
+---
+
+# 🔎 Quick Way to See All Methods
+
+You can inspect them:
+
+```python
+from datetime import datetime
+print(dir(datetime))
+```
+
+Or for a specific object:
+
+```python
+d = datetime.now()
+print(dir(d))
+```
+
+---
+
+If you want, I can now give:
+
+* 🔥 Interview-focused important methods
+* 💡 Real-world usage examples
+* 📌 Methods explained with simple examples
+* 📊 Differences between `now()`, `today()`, `utcnow()`
+
+Just tell me what you prefer 🚀
