@@ -1,0 +1,146 @@
+An API, or Application Programming Interface, is a set of rules and protocols that allows two different software programs to communicate and exchange data with each other.
+It acts as a messenger or a middleman, receiving requests from one application (the client) and delivering a response from another (the server).
+
+https://www.webfx.com/web-development/glossary/http-status-codes/
+
+An api is a set of rules and protocols functions and objects.That programmers can use to create software or interact with external system.
+
+
+Sure 👍
+Here are **clean, interview-ready notes** on **HTTP Response Codes**.
+
+---
+
+# 📘 HTTP Response Codes – Notes
+
+## ✅ 1. What is a Response Code?
+
+* A **response code** (HTTP status code) is a number returned by the server.
+* It tells whether the request was:
+
+  * Successful ✅
+  * Failed ❌
+  * Redirected 🔁
+
+---
+
+# 📊 2. Categories of HTTP Status Codes
+
+HTTP status codes are divided into **5 categories**:
+
+| Range | Meaning       |
+| ----- | ------------- |
+| 1xx   | Informational |
+| 2xx   | Success       |
+| 3xx   | Redirection   |
+| 4xx   | Client Error  |
+| 5xx   | Server Error  |
+
+---
+
+# 🟢 3. 2xx – Success Codes
+
+| Code | Meaning    | When Used                    |
+| ---- | ---------- | ---------------------------- |
+| 200  | OK         | Request successful           |
+| 201  | Created    | New resource created         |
+| 204  | No Content | Success but no response body |
+
+Example:
+
+* GET → 200
+* POST (create user) → 201
+
+---
+
+# 🟡 4. 3xx – Redirection Codes
+
+| Code | Meaning            |
+| ---- | ------------------ |
+| 301  | Moved Permanently  |
+| 302  | Temporary Redirect |
+
+Used when:
+
+* URL has changed
+* Resource moved
+
+---
+
+# 🔴 5. 4xx – Client Errors
+
+Means: ❌ Problem in request (Client mistake)
+
+| Code | Meaning      | Reason             |
+| ---- | ------------ | ------------------ |
+| 400  | Bad Request  | Invalid input      |
+| 401  | Unauthorized | Login required     |
+| 403  | Forbidden    | No permission      |
+| 404  | Not Found    | Resource not found |
+
+Example:
+
+* Wrong API URL → 404
+* Wrong credentials → 401
+
+---
+
+# 🔥 6. 5xx – Server Errors
+
+Means: ❌ Server problem
+
+| Code | Meaning               |
+| ---- | --------------------- |
+| 500  | Internal Server Error |
+| 502  | Bad Gateway           |
+| 503  | Service Unavailable   |
+
+Example:
+
+* Database crash → 500
+
+---
+
+# 💻 Python Example
+
+```python
+import requests
+
+response = requests.get("http://localhost:8080/products")
+
+print(response.status_code)
+
+if response.status_code == 200:
+    print("Success")
+else:
+    print("Error")
+```
+
+---
+
+# 🧠 Important Interview Points
+
+* 200 → Success
+* 201 → Resource Created
+* 400 → Client mistake
+* 401 → Authentication required
+* 403 → Access denied
+* 404 → Not found
+* 500 → Server error
+
+---
+
+# 🎯 Short Interview Definition
+
+> HTTP status codes are standard response codes returned by a server to indicate the result of an HTTP request.
+
+---
+
+If you want, I can also prepare:
+
+* 📄 REST API complete notes
+* 📄 API + HTTP + JSON combined notes
+* 📄 Spring Boot status code handling notes
+* 📄 Python requests full notes
+
+Tell me which one you want 👍

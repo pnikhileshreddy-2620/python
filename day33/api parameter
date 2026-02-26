@@ -1,0 +1,164 @@
+
+
+## 🔹 What Are API Parameters?
+
+**API parameters** are values you send to an API to customize the response.
+
+Think of it like this:
+
+> API = waiter
+> Parameters = your food preferences
+> Response = your customized order
+
+---
+
+## 🔹 Why We Use Parameters?
+
+We use parameters to:
+
+* Filter data
+* Search specific information
+* Limit results
+* Sort data
+* Send required input to the server
+
+---
+
+## 🔹 Types of API Parameters
+
+### 1️⃣ Query Parameters (Most Common)
+
+* Added at the end of URL
+* Start with `?`
+* Multiple parameters separated by `&`
+
+📌 Example:
+
+```
+https://api.openweathermap.org/data/2.5/weather?q=Hyderabad&appid=API_KEY
+```
+
+Here:
+
+* `q=Hyderabad` → city name
+* `appid=API_KEY` → authentication key
+
+Example using OpenWeather API.
+
+---
+
+### 2️⃣ Path Parameters
+
+* Part of the URL path
+* Used to identify a specific resource
+
+Example:
+
+```
+https://api.github.com/users/nikhilesh
+```
+
+Here:
+
+* `nikhilesh` is a path parameter
+* It fetches a specific user from GitHub
+
+---
+
+### 3️⃣ Header Parameters
+
+* Sent inside request headers
+* Used for authentication, content type, tokens
+
+Example:
+
+```
+Authorization: Bearer token_value
+Content-Type: application/json
+```
+
+---
+
+### 4️⃣ Body Parameters
+
+* Sent in request body
+* Mostly used in POST, PUT requests
+* Used to send data to server
+
+Example JSON:
+
+```json
+{
+  "username": "nikhil",
+  "password": "12345"
+}
+```
+
+---
+
+## 🔹 Example in Python (Using requests)
+
+```python
+import requests
+
+url = "https://api.openweathermap.org/data/2.5/weather"
+
+params = {
+    "q": "Hyderabad",
+    "appid": "YOUR_API_KEY"
+}
+
+response = requests.get(url, params=params)
+
+print(response.json())
+```
+
+Here:
+
+* `params` dictionary automatically converts to query parameters
+* `requests` library handles it cleanly
+
+---
+
+## 🔹 Simple Real Example
+
+If API is:
+
+```
+GET /products
+```
+
+Without parameters → returns all products
+
+With parameters:
+
+```
+GET /products?category=milk&limit=5
+```
+
+Now:
+
+* Only milk products
+* Only 5 results
+
+---
+
+## 🔹 Quick Notes
+
+| Parameter Type | Where It Goes       | Example                 |
+| -------------- | ------------------- | ----------------------- |
+| Query          | After `?` in URL    | `?city=Hyderabad`       |
+| Path           | Inside URL path     | `/users/10`             |
+| Header         | Request header      | `Authorization: Bearer` |
+| Body           | Inside request body | JSON data               |
+
+---
+
+If you want, I can now explain:
+
+* 🔹 Difference between query and path parameter
+* 🔹 How parameters work in REST API
+* 🔹 How to use parameters in Spring Boot
+* 🔹 Interview questions on API parameters
+
+Tell me what you want next 😊
