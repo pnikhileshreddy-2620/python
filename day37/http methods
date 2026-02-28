@@ -1,0 +1,15 @@
+
+| Action         | Method | URL       |
+| -------------- | ------ | --------- |
+| Get all users  | GET    | /users    |
+| Get one user   | GET    | /users/10 |
+| Create user    | POST   | /users    |
+| Update user    | PUT    | /users/10 |
+| Partial update | PATCH  | /users/10 |
+| Delete user    | DELETE | /users/10 |
+
+
+get :- requests.get()
+post :-requests.post()
+put :- requests.put()
+delete :-requests.delete()
